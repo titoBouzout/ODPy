@@ -1,0 +1,44 @@
+	
+	<!--
+		this is the piece of code that is pasted into my bookmark's description, 
+		then this is loaded when my bookmark's description page is opened 
+	-->
+
+	<!-- css -->
+		
+		<link rel="stylesheet" type="text/css" href="css/forms.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+	
+	<!-- basics -->
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+		
+	<!-- basics plugins -->
+	
+		<script type="text/javascript" src="lib/jQueryPlugins/jquery.inputDefault.js"></script>
+		<script type="text/javascript" src="lib/jQueryPlugins/jquery.inputDefault.js"></script>
+	
+	<!-- lib -->
+			
+	<!-- script -->
+	
+		<script type="text/javascript" src="ODPy.js"></script>
+	
+	<!-- document load -->
+	
+		<script type="text/javascript">
+		
+			$(document).ready(function(){
+			
+				//here the fun..
+					
+					//remove unused code
+					$('#omniture').remove();
+					
+					//load our HTML code
+					$("#bd-cross").load("feeds.html");
+				
+					
+			});
+		</script>

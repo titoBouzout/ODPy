@@ -1,0 +1,90 @@
+/* CSS Document */
+	body, html
+	{
+		font-family:Arial, sans-serif;
+		font-size:13px;
+		background-color:whiteSmoke;
+		margin:0px;
+		padding:0px;
+		border:0px;
+		height: 100%;
+	}
+
+	.page
+	{
+		padding:5px;
+		min-height: 90%; _height: 90%;
+	}
+		.header
+		{
+			margin-bottom:13px;
+			float:right;
+		}
+			.menu
+			{
+				margin:0px;
+				padding:0px;
+			}
+			.menu li
+			{
+				display:inline-table;
+				margin:0px;
+				padding:0px;
+				margin-right:12px;
+			}
+			.menu li:before
+			{
+				content:"\2192 \0020"; 
+			}
+			
+		h1 /* page title */
+		{
+			font-weight:normal;
+			letter-spacing:3px;
+			margin-bottom:2px;
+			
+		}
+		h2 /* page description */
+		{
+			font-weight:lighter;
+			font-size:12px;
+			letter-spacing:1px;
+			margin-bottom:15px;
+		}
+		
+			form
+			{
+				margin:15px;
+				margin-top:0px;
+			}
+				h3 /* item title*/
+				{
+					font-weight:lighter;
+				}
+				h4 /* form title*/
+				{
+					font-weight:lighter;
+				}
+				h5 /* form input title*/
+				{
+					font-weight:lighter;
+					font-size:13px;
+					
+				}
+
+		.footer
+		{
+			width:100%;
+			text-align:center;
+			margin:-25px 0 0;
+			padding-left:0;
+			padding-right:0;
+			padding-top:20px;
+			clear: both;
+		}
+			.debug
+			{
+				display:block;
+				clear:both;
+				display:none;
+			}
