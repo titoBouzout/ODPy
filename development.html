@@ -1,7 +1,7 @@
 	
 	<!--
 		this is the piece of code that is pasted into my bookmark's description, 
-		then this is loaded when my bookmark's description page is opened 
+		then this is loaded when my bookmark's description page is opened.
 	-->
 
 	<!-- basics -->
@@ -17,11 +17,11 @@
 				//here the fun..
 				
 					//reset head
-					$("head").replaceWith('<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>ODPy</title>');
+					$("head").replaceWith('<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>ODPy</title></head>');
 
 					//reset body with our HTML code
-					$("body").load("http://github.com/titoBouzout/ODPy/raw/master/index.html");
-				
-					
+					$("body").replaceWith('<body><div></div></body>');
+					$("div").load("http://github.com/titoBouzout/ODPy/raw/master/index.html");
+
 			});
 		</script>
