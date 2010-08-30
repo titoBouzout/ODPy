@@ -4,11 +4,6 @@
 		then this is loaded when my bookmark's description page is opened 
 	-->
 
-	<!-- css -->
-		
-		<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/forms.css">
-		<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/page.css">
-	
 	<!-- basics -->
 	
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -32,8 +27,11 @@
 			$(document).ready(function(){
 			
 				//here the fun..
-					
-					//load our HTML code
+				
+					//reset head
+					$("head").replaceWith('<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>ODPy</title>');
+
+					//reset body with our HTML code
 					$("body").load("http://github.com/titoBouzout/ODPy/raw/master/index.html");
 				
 					
