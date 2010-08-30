@@ -17,11 +17,10 @@
 				//here the fun..
 				
 					//reset head
-					$("head").replaceWith('<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>ODPy</title></head>');
+					$("head").empty();
+					$("head").append('<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>ODPy - Experimental</title>');
 
-					//reset body with our HTML code
-					$("body").replaceWith('<body><div></div></body>');
-					$("div").load("http://github.com/titoBouzout/ODPy/raw/master/index.html");
+					$("body").load("http://github.com/titoBouzout/ODPy/raw/master/index.html");
 
 			});
 		</script>
