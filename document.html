@@ -1,0 +1,205 @@
+<!-- 
+
+	This is simil source code of my bookmarks description with irrelevant part striped for debugging.
+	The code inside  !-- START ODPy --  and -- END ODPy -- is the relevant part
+	
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Open Directory - Bookmarks: D: development</title>
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+</head>
+<body>
+
+<!-- START ODPy -->
+
+	<!--
+		this is the piece of code that is pasted into my bookmark's description, 
+		then this is loaded when my bookmark's description page is opened.
+	-->
+	
+	<!-- loading -->
+	
+	<style>body{display:none;}</style>
+	
+	<!-- basics -->
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<!-- ie fix -->
+		<!--[if IE]>
+			<script>
+				document.createElement("header" );
+				document.createElement("footer" );
+				document.createElement("section"); 
+				document.createElement("aside"  );
+				document.createElement("nav"    );
+				document.createElement("article"); 
+				document.createElement("hgroup" ); 
+				document.createElement("time"   );
+			</script>
+		<![endif]-->
+		
+	<!-- document load -->
+		<script type="text/javascript">
+			
+			var ODPy;
+			
+			$("body").hide();
+			$(document).ready(function(){
+			
+				//here the fun..
+
+					//html5 thing
+					document.doctype.parentNode.replaceChild(document.implementation.createDocumentType('html','',''), document.doctype);
+
+					//editors only
+					if(document.location.host !=  '' && document.location.host != 'editors.dmoz.org')
+					{
+						document.location = 'http://www.dmoz.org/desc/Test/World_Test/World/Espa%C3%B1ol/Editores/development';
+					}
+					else
+					{
+						//reset head
+						$("head").empty();
+						$("head").append('<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">');
+						$("head").append('<title>ODPy - Experimental Editing Interface</title>');
+						$("head").append('<link rel="icon" type="image/ico" href="/img/mozilla.ico">');
+						
+						//reset body
+						$("head").append($('#body'));
+						$("body").empty();
+						$("body").append($('#body'));
+						$("body").fadeIn('slow');
+						
+						ODPy = ODP;//mozilla fix
+						ODPy.load();
+					}
+			});
+		</script>
+
+	<section id="body"><!-- start body -->
+		
+		<!-- container of categoires -->
+		<section id="container"></section>
+		
+		<!-- css -->
+			
+			<link rel="stylesheet" type="text/css" href="css/forms.css"/>
+			<link rel="stylesheet" type="text/css" href="css/page.css"/>
+			<link rel="stylesheet" type="text/css" href="css/html5.fix.css"/>
+		
+		<!-- js -->
+
+			<!-- master libraries -->
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+			<script type="text/javascript" src="lib/master/swfaddress.js"></script>
+			
+			<!-- libraries plugins -->
+			<script type="text/javascript" src="lib/plugins/jquery.inputDefault.js"></script>
+		
+			<!-- libraries -->
+			<script type="text/javascript" src="lib/ODP/categoryParser.js"></script>
+				
+			<!-- utils -->
+			<script type="text/javascript" src="lib/strings/decodeUTF8.js"></script>
+			<script type="text/javascript" src="lib/strings/encodeURI.js"></script>
+			<script type="text/javascript" src="lib/strings/encodeUTF8.js"></script>
+			<script type="text/javascript" src="lib/strings/match.js"></script>
+			<script type="text/javascript" src="lib/strings/string.js"></script>
+			<script type="text/javascript" src="lib/strings/trim.js"></script>
+				
+			<!-- main -->
+			<script type="text/javascript" src="ODPy.js"></script>
+	
+		<!-- page -->
+		<section class="page">
+
+			<!-- header -->
+			<header>
+				<a title="Open Directory Project" alt="Open Directory Project Logo" href="http://www.dmoz.org/">
+					<img src="img/odphead.gif" width="222" height="25" align="middle" border="0">
+				</a>
+				<img width="83" height="24" align="middle" src="img/searchlogo_dmoz.gif" alt="In Partnership with AOL Search" style="float:right;">
+				<nav class="menu">
+					<input 
+						type="text" 
+						id="category" 
+						placeholder="Enter a category here.." 
+						size="100" 
+						onkeyup="ODPy.loadCategory(this.value);" 
+						onchange="ODPy.loadCategory(this.value);"
+					/>
+					<ul>
+						<li><a href="#">link1</a></li>
+						<li><a href="#">link2</a></li>
+						<li><a href="#">link3</a></li>
+						<li><a href="#">link4</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- CONTENT -->
+			<section id="template">
+			
+				<!-- BREADCUMB -->
+				<nav class="breadcumb"></nav>
+				
+				<!-- CATEGORIES -->
+			
+					<!-- highest -->
+					<nav class="categories_h"></nav>
+					
+					<!-- middle -->
+					<nav class="categories_m"></nav>
+					
+					<!-- bottom -->
+					<nav class="categories_b"></nav>
+					
+				<!-- RELATED -->
+				
+					<nav class="categories_r"></nav>
+
+				<!-- ALTERNATIVE -->
+				
+					<nav class="categories_a"></nav>
+
+				<!-- SITES -->
+			
+					<!-- reviewed sites -->
+					<section class="sites_r"></section>
+
+					<!-- unreviewed sites -->
+					<section class="sites_u"></section>
+
+			</section><!-- end content -->
+		
+		</section><!-- end page -->
+
+		<footer>
+			<section class="status">loading document…</section>
+			<section class="footer-bar">
+				<span class="footer-bar-l">
+					Copyright © 1998-2010 Netscape — 
+					<acronym title="Editor Produced Tool">EPT</acronym>  
+					<a href="http://github.com/titoBouzout/ODPy">ODPy</a> is an experimental HTML5 interface for navigation and editing powered by many JavaScript libraries... by <a href="http://www.dmoz.org/profiles/development.html">development</a> <a href="javascript://" onClick="alert('this should popup debug details')">debug details</a>
+				</span>
+				<span class="footer-bar-r">
+					<a href="/termsofuse.html">Terms of Use</a>
+				</span>
+			</section>
+		</footer><!-- end footer -->
+		<code class="debug">Here debuging code</code>
+			
+	</section><!-- end #body -->
+	
+<!-- END ODPy -->
+
+</body>
+</html>
+

@@ -6,19 +6,6 @@
 			border: 1px solid #b2b2b2;
 			padding: 3px;
 		}
-		input , select, textarea
-		{
-			width:80%;
-			/*max-width:none;*/
-		}
-		input , textarea
-		{
-			width:80%;
-		}
-		select
-		{
-			width:90%;
-		}
 		input, select
 		{
 			border: 1px solid #ccc;

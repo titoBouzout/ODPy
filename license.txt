@@ -2,9 +2,10 @@
 											Johann Wolfgang von Goethe
 
 ODPy License - Experimental editing interface.
-Copyright (C) 2006-2010 Roberto Bouzout <titodp@gmail.com>
+Copyright (C) 2010-2010 Roberto Bouzout <titodp@gmail.com>
 
 This license apply to all the files inside this program unless noted different for some files.
+There is libraries from the ODPExtension (https://addons.mozilla.org/en-US/firefox/addon/176740/) with same license.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
