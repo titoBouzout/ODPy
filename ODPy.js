@@ -21,6 +21,7 @@ ODP = {
 		//display document loaded
 		this.statusSet('document loaded'+this.e);
 		this.statusHide();
+		$("body").fadeIn('slow');
 	},
 	loadElements : function()// loads basic inteface elements
 	{
@@ -162,12 +163,12 @@ ODP = {
 		$('.alphabar').empty();
 		if(aData.alphabar.length > 0)
 		{
-			var tmp = '';
+			var tmp = [];
 			for(var id in aData.alphabar)
 			{
-				tmp += (' <a href="#/Top/'+aCategory+'/'+aData.alphabar[id]+'/">'+aData.alphabar[id]+'</a> ');
+				tmp[tmp.length] = (' <a href="#/Top/'+aCategory+'/'+aData.alphabar[id]+'/">'+aData.alphabar[id]+'</a> ');
 			}
-			$('.alphabar').html(tmp);
+			$('.alphabar').html('[ '+tmp.join(' | ')+' ]');
 		}
 		else
 			$('.alphabar').hide();		

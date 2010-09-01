@@ -74,7 +74,6 @@
 						$("head").append($('#body'));
 						$("body").empty();
 						$("body").append($('#body'));
-						$("body").fadeIn('slow');
 						
 						ODPy = ODP;//mozilla fix
 						ODPy.load();
@@ -89,53 +88,53 @@
 		
 		<!-- css -->
 			
-			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/forms.css"/>
-			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/page.css"/>
-			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/html5.fix.css"/>
-			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/odpy.css"/>
+			<link rel="stylesheet" type="text/css" href="http://localhost/ODPy/css/forms.css"/>
+			<link rel="stylesheet" type="text/css" href="http://localhost/ODPy/css/page.css"/>
+			<link rel="stylesheet" type="text/css" href="http://localhost/ODPy/css/html5.fix.css"/>
+			<link rel="stylesheet" type="text/css" href="http://localhost/ODPy/css/odpy.css"/>
 
 		<!-- js -->
 
 			<!-- master libraries -->
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
-			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/master/swfaddress.js"></script>
+			<script type="text/javascript" src="http://localhost/ODPy/lib/master/swfaddress.js"></script>
 			
 			<!-- libraries plugins -->
-			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/plugins/jquery.inputDefault.js"></script>
+			<script type="text/javascript" src="http://localhost/ODPy/lib/plugins/jquery.inputDefault.js"></script>
 		
 			<!-- libraries -->
-			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryParser.js"></script>
+			<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryParser.js"></script>
 				
 			<!-- utils -->
 				<!-- strings -->
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/decodeUTF8.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/encodeURI.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/encodeUTF8.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/htmlSpecialCharsDecode.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/match.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/string.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/stripTags.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/subStrCount.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/trim.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/decodeUTF8.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/encodeURI.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/encodeUTF8.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/htmlSpecialCharsDecode.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/match.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/string.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/stripTags.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/subStrCount.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/strings/trim.js"></script>
 				<!-- urls -->
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/getSubdomainFromURL.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/removePort.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/removeSubdomain.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/removeWWW.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/urls/getSubdomainFromURL.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/urls/removePort.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/urls/removeSubdomain.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/urls/removeWWW.js"></script>
 				<!-- odp from the ODP Extension -->
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryCheckFormat.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryGetFromURL.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryGetLastChildName.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryGetURLPrivate.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryParser.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categorySanitize.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryStartsWithValidName.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryTitle.js"></script>
-				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/isODPSubdomain.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryCheckFormat.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryGetFromURL.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryGetLastChildName.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryGetURLPrivate.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryParser.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categorySanitize.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryStartsWithValidName.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/categoryTitle.js"></script>
+				<script type="text/javascript" src="http://localhost/ODPy/lib/ODP/isODPSubdomain.js"></script>
 
 			<!-- main -->
-			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/ODPy.js"></script>
+			<script type="text/javascript" src="http://localhost/ODPy/ODPy.js"></script>
 		
 		<section class="page">
 			
@@ -143,16 +142,16 @@
 			<aside class="margin"></aside>
 			<header>
 				<a title="Open Directory Project" href="http://www.dmoz.org/">
-					<img src="http://github.com/titoBouzout/ODPy/raw/master/odphead.gif" width="222" height="25" align="middle" alt="Open Directory Project Logo" border="0">
+					<img src="/img/odphead.gif" width="222" height="25" align="middle" alt="Open Directory Project Logo" border="0">
 				</a>
-				<img width="83" height="24" align="middle" src="http://github.com/titoBouzout/ODPy/raw/master/searchlogo_dmoz.gif" alt="In Partnership with AOL Search" style="float:right;">
+				<img width="83" height="24" align="middle" src="http://editors.dmoz.org/img/aolsearch.gif" alt="In Partnership with AOL Search" style="float:right;">
 				<nav class="menu">
 					<input 
 						type="text" 
 						id="category" 
 						placeholder="Type or paste a category path here.." 
 						title="Type or paste a category path here.." 
-						style="width:100%;" 
+						style="width:98%;" 
 						onkeyup="ODPy.loadCategory(this.value);" 
 						onchange="ODPy.loadCategory(this.value);"
 						onblur="ODPy.loadCategory(this.value);"
@@ -170,10 +169,13 @@
 	
 				<section class="category-data">
 				
-	
+
 					<!-- CATEGORIES -->
 						<section class="categories-categories">
 				
+							<!-- alphabar -->
+							<nav class="alphabar"></nav>
+							
 							<!-- highest -->
 							<nav class="categories-highest"></nav>
 							
@@ -182,17 +184,15 @@
 							
 							<!-- bottom -->
 							<nav class="categories-bottom"></nav>
-							
+
 							<!-- RELATED -->
-							<nav class="categories-related"></nav>
+							<nav class="categories-related"></nav>	
+								
+							<!-- ALTERNATIVE -->
+							<nav class="categories-alternative"></nav>
 							
 						</section>
-						
-					<!-- ALTERNATIVE -->
-					
-						<!-- alphabar -->
-						<nav class="alphabar"></nav>
-						<nav class="categories-alternative"></nav>
+
 
 					<!-- SITES -->
 				

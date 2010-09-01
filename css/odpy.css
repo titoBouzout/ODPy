@@ -4,28 +4,23 @@
 	}
 	.template
 	{
-		clear:both;
-		display:block;
+		width:100%;
 	}
 		.category-data
 		{
-			display:block;
 			width:100%;
 		}
 			.alphabar
 			{
 				text-align:center;
-				float:left;
-				max-width:3%;
-				width:3%;
-				max-width:10px;
-				margin-top:13px;
+				padding-bottom:16px;
+				border-bottom:1px solid #DBDBDB;
+				margin-top:16px;
 			}
 			.categories-categories
 			{
-				float:left;
-				max-width:82%;
-				
+				width:100%;
+				max-width:100%;
 				font-size:16px;
 				font-family:serif;
 			}
@@ -35,8 +30,8 @@
 			}
 				.categories-highest, .categories-middle, .categories-bottom
 				{
-					
-					width:99%;
+					clear:both;
+					width:100%;
 					border-bottom:1px solid #DBDBDB;
 				}
 					.categories-highest ul, .categories-middle ul, .categories-bottom ul
@@ -56,43 +51,58 @@
 							{
 								font-weight:bold;
 							}
-	.categories-alternative
-	{
-		float:right;
-		min-width:14%;
-	}
-	.categories-alternative ul
-	{
-		padding-left:16px;
-		padding-right:0px;
-		margin-right:0px;
-	}
 	.categories-related
 	{
-		width:99%;
+		width:100%;
 		border-bottom:1px solid #DBDBDB;
 	}
 	.categories-related ul
 	{
 		padding-left:18px;
 	}
+	.categories-alternative
+	{
+		clear:both;
+		width:100%;
+		font-size:13px;
+		border-bottom:1px solid #DBDBDB;
+		
+	}
+	.categories-alternative ul
+	{
+		display:inline-block;
+		width:100%;
+		padding-right:0px;
+		padding-left:0px;
+		list-style:none;
+	}
+	.categories-alternative li
+	{
+		float:left;
+		width:14%;
+		min-width:14%;
+	}
 	.sites-reviewed
 	{
 		padding-top:1px;
-		display:block;
-		clear:both;
 	}
-	.cool a
-	{
-		background-image:url(../img/star.png);
-		background-position:right;
-		background-repeat:no-repeat;
-		padding-right:18px;
-	}
+		.cool a
+		{
+			background-image:url(../img/star.png);
+			background-position:right;
+			background-repeat:no-repeat;
+			padding-right:18px;
+		}
 	.category-footer
 	{
-		float:left;
-		width:83%;	
+		width:100%;	
+		clear:both;
+		display:block;
+		margin-bottom:50px;
+	}
+	.groups
+	{
+		border-bottom:1px solid #DBDBDB;
 	}
 	.groups ul
 	{
@@ -101,27 +111,25 @@
 	.search
 	{
 		text-align:center;
+		margin-top:15px;
+		border-bottom:1px solid #DBDBDB;
+		padding-bottom:15px;
 	}
 	.editors
 	{
-		border-top:1px solid #DBDBDB;
-		text-align:center;
-		margin-top:15px;
-		padding-top:15px;
-		
-	}
-	.editors a
-	{
 		background-color:#F0F0F0;
-		padding:5px;
-		padding-left:0px;
-		padding-right:0px;
+		
+		width:30%;
+		margin:0 auto;
+		
+		text-align:center;
+		
+		margin-top:15px;
+		padding:4px;
 	}
-	
 	.sister
 	{
 		text-align:center;
 		margin-top:15px;
 	}
-	
 	
