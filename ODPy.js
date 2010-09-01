@@ -17,7 +17,7 @@ ODP = {
 		//now load basis elements
 		this.loadElements();
 		
-		this.loadCategory('Computers/Data_Formats/Markup_Languages/HTML/');
+		//this.loadCategory('Computers/Data_Formats/Markup_Languages/HTML/');
 		//display document loaded
 		this.statusSet('document loaded'+this.e);
 		this.statusHide();
@@ -33,7 +33,7 @@ ODP = {
 	loadCategory : function(aCategory)// checks for loading a new category
 	{
 		aCategory = categoryGetFromURL(aCategory);
-		if(aCategory != '' && aCategory != this.loadedCategory)
+		if(aCategory != '')
 		{
 			this.loadedCategory = aCategory;
 			
@@ -41,7 +41,7 @@ ODP = {
 			this.statusHide();
 			
 			clearTimeout(this.categoryTimeout);
-			this.categoryTimeout = setTimeout(function(){ SWFAddress.setValue('Top/'+aCategory+'/');  }, 1000);
+			this.categoryTimeout = setTimeout(function(){ document.location = '#Top/'+aCategory+'/';  }, 1000);
 		}
 	},
 	loadSearch : function(aSearchTerm)// loads a new category
