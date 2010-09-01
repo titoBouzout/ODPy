@@ -1,106 +1,84 @@
 /* CSS Document */
+	*
+	{
+		word-wrap:break-word !important;
+		white-space:wrap !important;
+	}
 	body, html, #body
 	{
-		font-size:13px;
+		height: 100%;
+		
 		margin:0px;
 		padding:0px;
 		border:0px;
-		height: 100%;
+	}
+	body
+	{
+		font-size:13px;
+		
+		margin-left:7px;
+		margin-right:7px;
+	}
+	a
+	{
+		color:#3300CC;
 	}
 	a:visited
 	{
 		color:#660066;
 	}
-	.page
-	{
-		padding:8px;
-		min-height: 90%;
-	}
-	.container
-	{
-		display:none;
-	}
-		header
+		.page
 		{
-			margin-bottom:13px;
-			background-color:#669933;
-			width:100%;
+			min-height: 100%;
 		}
-		header img
-		{
-			padding:7px;
-		}
-			.menu
+			.margin
 			{
-				margin:0px;
-				padding:0px;
-				background-color:#CCCCCC;
-				padding:3px;
+				height:7px;
 			}
-			.menu ul
+			header
 			{
-				display:inline-table;
-				margin:0px;
-				padding:0px;
+				background-color:#669933;
+				
+				width:100%;
 			}
-			.menu li
+			header img
 			{
-				display:inline-table;
-				margin:0px;
-				padding:0px;
-				margin-right:12px;
+				padding:7px;
 			}
-			.menu li:before
-			{
-				content:" > "; 
-			}
-
+				.menu
+				{
+					margin:0px;
+					padding:0px;
+					padding:3px;
+					background-color:#CCCCCC;
+				}
 		footer
 		{
-			width:100%;
 			padding-top:20px;
-			margin-top:-5px;
-			color:#FFFFFF;
-			height:20px;
+			margin-top:-55px;
 			clear:both;
-			display:block;
+			display:inline-block;
+			background-color:white !important;
 		}
-			footer .status
-			{
-				background-color:#669933;
-				float:right;
-				height:15px;
-				margin-right:5px;
-				margin-top:-10px;
-				min-width:25%;
-				padding-left:5px;
-				
-				-moz-border-radius-topleft:6px;
-				border-top-left-radius: 5px
-			}
-			.footer-bar
-			{
-				background-color:#669933;
-				font-size:11px;
-				height:20px;
-				margin:5px;
-			}
-			.footer-bar a
-			{
-				color:Beige;			
-			}
-				.footer-bar-l
-				{
-					margin-top:3px;
-					margin-left:5px;
-					float:left;
-				}
-				.footer-bar-r
-				{
-					margin-top:3px;
-					margin-right:5px;
-					float:right;
-				}
+		.status-bar
+		{
+			background-color:#669933;
+			
+			height:15px;
+			min-width:25%;
+			
+			padding:3px;
+			padding-bottom:2px;
+			padding-top:1px;
+			
+			-moz-border-radius-topleft:6px;
+			border-top-left-radius: 5px;
+			
+			position:fixed;
+			right:0px;
+			bottom:0px;
+			color:white;
+		}
 		.debug
 		{
 			clear:both;

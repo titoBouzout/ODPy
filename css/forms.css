@@ -70,9 +70,14 @@
 	textarea, input, select 
 	{
 		background:#F7f7f7 ;
-		color: #000;
 		font-family:Arial;
 		font-size:13px;
+		color:#999999;
+	}
+	
+	textarea:focus, input:focus , select:focus  
+	{
+		color:#333333;
 	}
 	
 	input[type="button"], input[type="submit"]

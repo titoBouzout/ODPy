@@ -57,10 +57,10 @@
 					//html5 thing
 					document.doctype.parentNode.replaceChild(document.implementation.createDocumentType('html','',''), document.doctype);
 
-					//editors only
-					if(document.location.host !=  '' && document.location.host != 'editors.dmoz.org')
+					//editors only while testing
+					if(document.location.host !=  '' && document.location.host !=  'localhost' && document.location.host != 'editors.dmoz.org')
 					{
-						document.location = 'http://www.dmoz.org/desc/Test/World_Test/World/Espa%C3%B1ol/Editores/development';
+						document.location = 'http://editors.dmoz.org/desc/Test/World_Test/World/Espa%C3%B1ol/Editores/development';
 					}
 					else
 					{
@@ -83,119 +83,182 @@
 		</script>
 
 	<section id="body"><!-- start body -->
-		
-		<!-- container of categoires -->
-		<section id="container"></section>
+	
+		<!-- container of hidden categories -->
+		<section class="container"></section>
 		
 		<!-- css -->
 			
-			<link rel="stylesheet" type="text/css" href="css/forms.css"/>
-			<link rel="stylesheet" type="text/css" href="css/page.css"/>
-			<link rel="stylesheet" type="text/css" href="css/html5.fix.css"/>
-		
+			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/forms.css"/>
+			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/page.css"/>
+			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/html5.fix.css"/>
+			<link rel="stylesheet" type="text/css" href="http://github.com/titoBouzout/ODPy/raw/master/css/odpy.css"/>
+
 		<!-- js -->
 
 			<!-- master libraries -->
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
-			<script type="text/javascript" src="lib/master/swfaddress.js"></script>
+			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/master/swfaddress.js"></script>
 			
 			<!-- libraries plugins -->
-			<script type="text/javascript" src="lib/plugins/jquery.inputDefault.js"></script>
+			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/plugins/jquery.inputDefault.js"></script>
 		
 			<!-- libraries -->
-			<script type="text/javascript" src="lib/ODP/categoryParser.js"></script>
+			<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryParser.js"></script>
 				
 			<!-- utils -->
-			<script type="text/javascript" src="lib/strings/decodeUTF8.js"></script>
-			<script type="text/javascript" src="lib/strings/encodeURI.js"></script>
-			<script type="text/javascript" src="lib/strings/encodeUTF8.js"></script>
-			<script type="text/javascript" src="lib/strings/match.js"></script>
-			<script type="text/javascript" src="lib/strings/string.js"></script>
-			<script type="text/javascript" src="lib/strings/trim.js"></script>
-				
+				<!-- strings -->
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/decodeUTF8.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/encodeURI.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/encodeUTF8.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/htmlSpecialCharsDecode.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/match.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/string.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/stripTags.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/subStrCount.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/strings/trim.js"></script>
+				<!-- urls -->
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/getSubdomainFromURL.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/removePort.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/removeSubdomain.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/urls/removeWWW.js"></script>
+				<!-- odp from the ODP Extension -->
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryCheckFormat.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryGetFromURL.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryGetLastChildName.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryGetURLPublic.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryParser.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categorySanitize.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryStartsWithValidName.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/categoryTitle.js"></script>
+				<script type="text/javascript" src="http://github.com/titoBouzout/ODPy/raw/master/lib/ODP/isODPSubdomain.js"></script>
+
 			<!-- main -->
 			<script type="text/javascript" src="ODPy.js"></script>
-	
-		<!-- page -->
+		
 		<section class="page">
-
+			
 			<!-- header -->
+			<aside class="margin"></aside>
 			<header>
-				<a title="Open Directory Project" alt="Open Directory Project Logo" href="http://www.dmoz.org/">
-					<img src="img/odphead.gif" width="222" height="25" align="middle" border="0">
+				<a title="Open Directory Project" href="http://www.dmoz.org/">
+					<img src="img/odphead.gif" width="222" height="25" align="middle" alt="Open Directory Project Logo" border="0">
 				</a>
 				<img width="83" height="24" align="middle" src="img/searchlogo_dmoz.gif" alt="In Partnership with AOL Search" style="float:right;">
 				<nav class="menu">
 					<input 
 						type="text" 
 						id="category" 
-						placeholder="Enter a category here.." 
+						placeholder="Type or paste a category path here.." 
+						title="Type or paste a category path here.." 
 						size="100" 
 						onkeyup="ODPy.loadCategory(this.value);" 
 						onchange="ODPy.loadCategory(this.value);"
+						onblur="ODPy.loadCategory(this.value);"
 					/>
-					<ul>
-						<li><a href="#">link1</a></li>
-						<li><a href="#">link2</a></li>
-						<li><a href="#">link3</a></li>
-						<li><a href="#">link4</a></li>
-					</ul>
 				</nav>
 			</header>
-
+	
 			<!-- CONTENT -->
-			<section id="template">
-			
-				<!-- BREADCUMB -->
-				<nav class="breadcumb"></nav>
+			<section class="template">
+	
+				<!-- breadcrumb -->
+				<nav class="breadcrumb"></nav>
 				
-				<!-- CATEGORIES -->
-			
-					<!-- highest -->
-					<nav class="categories_h"></nav>
-					
-					<!-- middle -->
-					<nav class="categories_m"></nav>
-					
-					<!-- bottom -->
-					<nav class="categories_b"></nav>
-					
-				<!-- RELATED -->
+				<!-- CATEGORY DATA -->
+	
+				<section class="category-data">
 				
-					<nav class="categories_r"></nav>
-
-				<!-- ALTERNATIVE -->
+	
+					<!-- CATEGORIES -->
+						<section class="categories-categories">
 				
-					<nav class="categories_a"></nav>
+							<!-- highest -->
+							<nav class="categories-highest"></nav>
+							
+							<!-- middle -->
+							<nav class="categories-middle"></nav>
+							
+							<!-- bottom -->
+							<nav class="categories-bottom"></nav>
+							
+							<!-- RELATED -->
+							<nav class="categories-related"></nav>
+							
+						</section>
+						
+					<!-- ALTERNATIVE -->
+					
+						<!-- alphabar -->
+						<nav class="alphabar"></nav>
+						<nav class="categories-alternative"></nav>
 
-				<!-- SITES -->
-			
-					<!-- reviewed sites -->
-					<section class="sites_r"></section>
+					<!-- SITES -->
+				
+						<!-- reviewed sites -->
+						<section class="sites-reviewed"></section>
+	
+						<!-- unreviewed sites -->
+						<section class="sites-u"></section>
 
-					<!-- unreviewed sites -->
-					<section class="sites_u"></section>
+				</section>
 
-			</section><!-- end content -->
-		
+				<!-- CATEGORY FOOTER  -->
+				<section class="category-footer">
+
+					<!-- groups -->
+					<nav class="groups"></nav>
+
+					<!-- search -->
+					<nav class="search" onclick="if(event.originalTarget.tagName.toLowerCase() == 'a'){ event.preventDefault();return ODPy.computerSearch(event.originalTarget.href)}">
+						<a href="http://www.altavista.com/web/results?q=%s">AltaVista</a> - 
+						<a href="http://a9.com/%s">A9</a> - 
+						<a href="http://search.aol.com/aolcom/search?query=%s">AOL</a> - 
+						<a href="http://search.ask.com/web?q=%s">Ask</a> - 
+						<a href="http://www.bing.com/search?q=%s">Bing</a> - 
+						<a href="http://clusty.com/search?query=%s">Clusty</a> - 
+						<a href="http://gigablast.com/search?q=%s">Gigablast</a> - 
+						<a href="http://www.google.co.in/search?q=%s">Google</a> - 
+						<a href="http://search.lycos.com/?query=%s">Lycos</a> - 
+						<a href="http://search.yahoo.com/bin/search?p=%s">Yahoo</a>
+					</nav>
+
+					<!-- category editors -->
+					<section class="editors"></section>
+	
+					<!-- category apply -->
+					<section class="apply"></section>
+					
+					<!-- mozzie -->
+					<section class="moz"></section>
+					
+					<!-- sister sites -->
+					<nav class="sister">
+						<a href="http://www.mozilla.org/">Mozilla</a> - 
+						<a href="http://chefmoz.org/">ChefMoz</a> - 
+						<a href="http://musicmoz.org/">MusicMoz</a> - 
+						<a href="http://open-site.org/">Open Site</a> - 
+						<a href="http://en.wikipedia.org/">Wikipedia</a>
+					</nav>
+					
+				</section>
+	
+			</section><!-- end template -->
+
 		</section><!-- end page -->
 
 		<footer>
-			<section class="status">loading document…</section>
-			<section class="footer-bar">
-				<span class="footer-bar-l">
-					Copyright © 1998-2010 Netscape — 
-					<acronym title="Editor Produced Tool">EPT</acronym>  
-					<a href="http://github.com/titoBouzout/ODPy">ODPy</a> is an experimental HTML5 interface for navigation and editing powered by many JavaScript libraries... by <a href="http://www.dmoz.org/profiles/development.html">development</a> <a href="javascript://" onClick="alert('this should popup debug details')">debug details</a>
-				</span>
-				<span class="footer-bar-r">
-					<a href="/termsofuse.html">Terms of Use</a>
-				</span>
-			</section>
-		</footer><!-- end footer -->
+			Copyright © 1998-2010 Netscape — <br />
+			<a href="http://github.com/titoBouzout/ODPy"><acronym title="Editor Produced Tool">EPT</acronym> ODPy</a> 
+			is an experimental HTML5 interface for navigation and editing, 
+			by editor <a href="http://www.dmoz.org/profiles/development.html">development</a> - 
+			<a href="javascript://" onClick="alert('this should popup debug details');">debug details</a>
+		</footer>
+
+		<aside class="status-bar" data-status="">loading document…</aside>
 		<code class="debug">Here debuging code</code>
-			
+
 	</section><!-- end #body -->
 	
 <!-- END ODPy -->
