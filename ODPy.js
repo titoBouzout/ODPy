@@ -42,7 +42,7 @@ ODP = {
 			
 			clearTimeout(this.categoryTimeout);
 			this.categoryTimeout = setTimeout(function(){ 
-														   this.browseCategory(aCategory);
+														   ODPy.browseCategory(aCategory);
 														   SWFAddress.setValue('Top/'+aCategory+'/');
 														   document.location = '#Top/'+aCategory+'/'; 
 													   }, 1000);
