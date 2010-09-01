@@ -211,7 +211,7 @@
 					<nav class="groups"></nav>
 
 					<!-- search -->
-					<nav class="search" onclick="if(event.originalTarget.tagName.toLowerCase() == 'a'){ ODPy.computerSearch(event.originalTarget.title);}">
+					<nav class="search" onclick="if(event.target.hasAttribute('title')){ ODPy.computerSearch(event.target.title);}">
 						<a href="javascript://" title="http://www.altavista.com/web/results?q=%s">AltaVista</a> - 
 						<a href="javascript://" title="http://a9.com/%s">A9</a> - 
 						<a href="javascript://" title="http://search.aol.com/aolcom/search?query=%s">AOL</a> - 
