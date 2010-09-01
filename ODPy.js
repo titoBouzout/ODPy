@@ -41,7 +41,11 @@ ODP = {
 			this.statusHide();
 			
 			clearTimeout(this.categoryTimeout);
-			this.categoryTimeout = setTimeout(function(){ document.location = '#Top/'+aCategory+'/';  }, 1000);
+			this.categoryTimeout = setTimeout(function(){ 
+														   this.browseCategory(aCategory);
+														   SWFAddress.setValue('Top/'+aCategory+'/');
+														   document.location = '#Top/'+aCategory+'/'; 
+													   }, 1000);
 		}
 	},
 	loadSearch : function(aSearchTerm)// loads a new category
@@ -88,12 +92,15 @@ ODP = {
 		var aPath = aEvent.path.replace(/^\//, '');
 		if(aPath.indexOf('Top/') == '')
 		{
-			var aCategory = categoryGetFromURL(aPath);
-			this.loadedCategory = aCategory;
-			this.statusSet('loading category  "'+categoryTitle(aCategory)+'"'+this.e);
-			this.setTitle(aCategory);
-			parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.browse(aCategory, aData);});
+			this.browseCategory(categoryGetFromURL(aPath));
 		}
+	},
+	browseCategory : function(aCategory)
+	{
+		this.loadedCategory = aCategory;
+		this.statusSet('loading category  "'+categoryTitle(aCategory)+'"'+this.e);
+		this.setTitle(aCategory);
+		parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.browse(aCategory, aData);});
 	},
 	browse : function(aCategory, aData)
 	{
