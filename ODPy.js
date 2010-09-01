@@ -28,7 +28,7 @@ ODP = {
 		//$("#category").inputDefault();
 		//$("#search").inputDefault();
 		
-		//SWFAddress.addEventListener(SWFAddressEvent.CHANGE, function(event){ ODPy.onLocationChange(event);}, false);
+		SWFAddress.addEventListener(SWFAddressEvent.CHANGE, function(event){ ODPy.onLocationChange(event); }, false);
 	},
 	loadCategory : function(aCategory)// checks for loading a new category
 	{
