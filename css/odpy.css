@@ -87,6 +87,10 @@
 		padding-top:1px;
 		border-bottom:1px solid #DBDBDB;
 	}
+	.sites-reviewed ul
+	{
+		padding-left:18px;
+	}
 		.cool a
 		{
 			background-image:url(../img/star.png);
