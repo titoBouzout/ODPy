@@ -88,19 +88,21 @@ ODP = {
 		{
 			for(var id in aData.alternative)
 			{
-				$(aData.alternative[id]).find('a').each(function(){	aData.alternative[id] = this.getAttribute('href'); return false; });
+				$(aData.alternative[id]).find('a').each(function(){	
+																													anAltlang = this.getAttribute('href');
+																													if(!ODPy.toWorldLinkerate.read[anAltlang])
+																													{
+																														ODPy.toWorldLinkerate.read[anAltlang] = true;
+																														ODPy.statusSet('parsing category "'+categoryTitle(anAltlang)+'"');
+																														ODPy.statusHide();
+																														//parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
+																													}
+																												 });
 				
-				if(!this.toWorldLinkerate.read[aData.alternative[id]])
-				{
-					this.toWorldLinkerate.read[aData.alternative[id]] = true;
-					this.statusSet('parsing category "'+categoryTitle(aData.alternative[id])+'"');
-					this.statusHide();
-					//parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
-				}
 			}
 		}	
 
-		ODPy.statusHide();
+		this.statusHide();
 	},
 	sortLocale : function(a, b)
 	{
