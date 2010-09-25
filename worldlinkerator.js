@@ -89,11 +89,11 @@ ODP = {
 			for(var id in aData.alternative)
 			{
 				$(aData.alternative[id]).find('a').each(function(){	
-																													anAltlang = this.getAttribute('href');
+																													var anAltlang = this.getAttribute('href');
 																													if(!ODPy.toWorldLinkerate.read[anAltlang])
 																													{
 																														ODPy.toWorldLinkerate.read[anAltlang] = true;
-																														ODPy.statusSet('parsing category "'+categoryTitle(anAltlang)+'"');
+																														ODPy.statusSet('saving altlang "'+categoryTitle(anAltlang)+'"');
 																														ODPy.statusHide();
 																														//parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
 																													}
