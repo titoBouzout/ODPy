@@ -88,10 +88,13 @@ ODP = {
 		{
 			for(var id in aData.alternative)
 			{
+				$(aData.alternative[id]).find('a').each(function(){	aData.alternative[id] = this.getAttribute('href'); return false; });
+				
 				if(!this.toWorldLinkerate.read[aData.alternative[id]])
 				{
 					this.toWorldLinkerate.read[aData.alternative[id]] = true;
-					alert(aData.alternative[id]);
+					this.statusSet('parsing category "'+categoryTitle(aData.alternative[id])+'"');
+					this.statusHide();
 					//parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
 				}
 			}
