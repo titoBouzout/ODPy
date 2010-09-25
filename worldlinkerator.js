@@ -14,9 +14,6 @@ ODP = {
 		this.statusSet('loading document'+this.e);
 		this.statusHide();
 
-		//now load basis elements
-		this.loadElements();
-		
 		//this.loadCategory('Computers/Data_Formats/Markup_Languages/HTML/');
 		//display document loaded
 		this.statusSet('document loaded'+this.e);
