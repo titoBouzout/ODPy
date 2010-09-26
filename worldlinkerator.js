@@ -159,7 +159,7 @@ ODP = {
 		for(var id in categories)
 		{
 			$('.content').append(
-													 '<form name="form-'+encodeURIComponent(categories[id])+'" action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
+													 '<form name="form-'+(categories[id])+'"  id="form-'+(categories[id])+'" action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
 													 '<input type="hidden" name="cat" value="'+(categories[id])+'" />'+
 													 '<input type="hidden" name="type" value="altlang" />'+
 													 '<input type="hidden" name="altlangs" value="'+(this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n"))+'" />'+
@@ -170,7 +170,7 @@ ODP = {
 		}
 		for(var id in categories)
 		{
-			$('form-'+encodeURIComponent(categories[id])).submit();
+			$('#form-'+(categories[id])).submit();
 		}
 	},
 	sortLocale : function(a, b)
