@@ -85,6 +85,7 @@ ODP = {
 	},
 	worldlinkerateGetCategories : function(aCategory, aData)
 	{
+		aCategory = aCategory.replace(/\/$/, '');
 		this.statusSet('looking for altlangs on "'+categoryTitle(aCategory)+'"');
 		this.statusHide();
 		
