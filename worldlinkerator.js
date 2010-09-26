@@ -164,7 +164,7 @@ ODP = {
 													 '<input type="hidden" name="type" value="altlang" />'+
 													 '<input type="hidden" name="altlangs" value="'+(this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n"))+'" />'+
 													 '<input type="hidden" name="newaltlangs" value="'+((categories.join("\n")).replace(categories[id],'\n'))+'" />'+
-													 '<input type="hidden" name="submit" value="Update" style="display:none;" />'+
+													 '<input type="submit" name="submit" value="Update" style="display:none;" />'+
 													 '</form>'
 													 );
 		}
