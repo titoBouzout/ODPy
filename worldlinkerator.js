@@ -154,7 +154,7 @@ ODP = {
 	worldlinkerateSetCategories : function()
 	{
 		var categories = [];
-		$('input:checked').each(function(){ categories[categories] = $(this).val();})
+		$('input:checked').each(function(){ categories[categories.length] = $(this).val();})
 		
 		for(var id in categories)
 		{
