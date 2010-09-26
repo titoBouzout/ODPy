@@ -159,7 +159,7 @@ ODP = {
 		for(var id in categories)
 		{
 			$('.content').append(
-													 '<form id="form-'+encodeURIComponent(categories[id])+'" action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
+													 '<form id="form-'+encodeURIComponent(categories[id])+'" name="form-'+encodeURIComponent(categories[id])+'" action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
 													 '<input type="hidden" name="cat" value="'+encodeURIComponent(categories[id])+'" />'+
 													 '<input type="hidden" name="type" value="altlang" />'+
 													 '<input type="hidden" name="altlangs" value="'+encodeURIComponent(this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n"))+'" />'+
