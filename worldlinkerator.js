@@ -159,19 +159,18 @@ ODP = {
 		for(var id in categories)
 		{
 			$('.content').append(
-													 '<form name="form-'+(categories[id])+'"  id="form-'+(categories[id])+'" action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
+													 '<form action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
 													 '<input type="hidden" name="cat" value="'+(categories[id])+'" />'+
 													 '<input type="hidden" name="type" value="altlang" />'+
 													 '<input type="hidden" name="altlangs" value="'+(this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n"))+'" />'+
 													 '<input type="hidden" name="newaltlangs" value="'+((categories.join("\n")).replace(categories[id],'\n'))+'" />'+
-													 '<input type="hidden" name="submit" value="Update" />'+
+													 '<input type="hidden" name="submit" value="Update" style="display:none;" />'+
 													 '</form>'
 													 );
 		}
-		for(var id in categories)
-		{
-			$('#form-'+(categories[id])).submit(function(){return true;});
-		}
+		
+		//freaky jquery submit form...
+		$('input[type="submit"]').each(function(){ $(this).click(); });
 	},
 	sortLocale : function(a, b)
 	{
