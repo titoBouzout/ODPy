@@ -101,6 +101,7 @@ ODP = {
 
 				if(!this.toWorldLinkerate.read[aData.alternative[id]])
 				{
+					this.toWorldLinkerate.read[aData.alternative[id]] = true;
 					this.statusSet('loading category "'+categoryTitle(aData.alternative[id])+'"');
 					this.statusHide();
 					this.toWorldLinkerate.readRemaining++;
