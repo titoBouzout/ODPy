@@ -145,8 +145,18 @@ ODP = {
 				//show linked altlangs
 				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show current '+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].length+' altlangs]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
 			}
+			
+			$('.content').append('<input type="button" value="Worldlinkerate ( Build reciprocal links, between selected categories only [excluding unselected] )" onclick="ODPy.worldlinkerateSetCategories()" />')
 		}
 
+	},
+	worldlinkerateSetCategories : function()
+	{
+		var categories = $('input:checked');
+		for(var id in categories)
+		{
+			console.log(categories[id].value);
+		}
 	},
 	sortLocale : function(a, b)
 	{
