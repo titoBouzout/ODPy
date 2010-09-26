@@ -147,7 +147,7 @@ ODP = {
 			}
 			
 			$('.content').append('<br><br><br><font color="red">* Important : uncheck only non-appropiated worldlinks. Keep checked appropiated or already linked altlangs.</font>');
-			$('.content').append('<br><br><br><input style="max-width:none;min-width:592px;" type="button" value="Worldlinkerate ( Build reciprocal links, between selected categories only [excluding unselected] )" onclick="ODPy.worldlinkerateSetCategories()" />')
+			$('.content').append('<br><br><br><input style="max-width:none;min-width:592px;" type="button" value="Worldlinkerate ( Build reciprocal links.. between selected categories only [excluding unselected] )" onclick="ODPy.worldlinkerateSetCategories()" />')
 		}
 
 	},
@@ -159,17 +159,18 @@ ODP = {
 		for(var id in categories)
 		{
 			$('.content').append(
-													 '<form action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
+													 '<form id="form-'+encodeURIComponent(categories[id])+'" action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
 													 '<input type="hidden" name="cat" value="'+encodeURIComponent(categories[id])+'" />'+
 													 '<input type="hidden" name="type" value="altlang" />'+
 													 '<input type="hidden" name="altlangs" value="'+encodeURIComponent(this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n"))+'" />'+
 													 '<input type="hidden" name="newaltlangs" value="'+encodeURIComponent((categories.join("\n")).replace(categories[id],'\n'))+'" />'+
 													 '<input type="hidden" name="submit" value="Update" />'+
 													 '</form>'
-													 
-													 
-													 )
-			console.log(categories[id]);
+													 );
+		}
+		for(var id in categories)
+		{
+			$('#form-'+encodeURIComponent(categories[id])).submit();
 		}
 	},
 	sortLocale : function(a, b)
