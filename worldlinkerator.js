@@ -81,6 +81,8 @@ ODP = {
 		$('.content').empty();
 		
 		this.statusSet('loading category  "'+categoryTitle(aCategory)+'"'+this.e);
+		this.statusHide();
+
 		this.setTitle(aCategory);
 		
 		parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
@@ -136,11 +138,10 @@ ODP = {
 					$('.content').append('<br><i><a href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
 				else
 					$('.content').append('<br><a href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a>');
-				$('.content').append(' <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
+				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
 			}
 		}
 
-		this.statusHide();
 	},
 	sortLocale : function(a, b)
 	{
