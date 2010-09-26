@@ -170,7 +170,7 @@ ODP = {
 		}
 		for(var id in categories)
 		{
-			$('#form-'+(categories[id])).submit();
+			$('#form-'+(categories[id])).submit(function(){return true;});
 		}
 	},
 	sortLocale : function(a, b)
