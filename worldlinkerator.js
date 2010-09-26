@@ -78,6 +78,8 @@ ODP = {
 		this.toWorldLinkerate.readRemaining = 0;
 		this.toWorldLinkerate.readRemaining++;
 		
+		$('.content').empty();
+		
 		this.statusSet('loading category  "'+categoryTitle(aCategory)+'"'+this.e);
 		this.setTitle(aCategory);
 		
@@ -123,7 +125,7 @@ ODP = {
 				{
 					if(
 						 this.toWorldLinkerate.categories[id2] != this.toWorldLinkerate.categories[id] 
-						 && !inArray(this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id2]], this.toWorldLinkerate.categories[id])
+						 && !inArray(this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]], this.toWorldLinkerate.categories[id2])
 					)
 					{
 						alllinked = false;
@@ -131,9 +133,10 @@ ODP = {
 					}
 				}
 				if(alllinked)
-					$('.content').append('<br><i>'+this.toWorldLinkerate.categories[id] +'</i>');
+					$('.content').append('<br><i><a href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
 				else
-					$('.content').append('<br>'+this.toWorldLinkerate.categories[id] +'');
+					$('.content').append('<br><a href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a>');
+				$('.content').append(' <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
 			}
 		}
 
