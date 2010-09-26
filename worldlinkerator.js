@@ -23,7 +23,7 @@ ODP = {
 	worldlinkerate : function(aCategory)// checks for loading a new category
 	{
 		aCategory = categoryGetFromURL(aCategory);
-		if(aCategory != '')
+		if(aCategory != '' && this.loadedCategory != aCategory)
 		{
 			this.loadedCategory = aCategory;
 			
@@ -69,7 +69,6 @@ ODP = {
 	},
 	worldlinkerateLoad : function(aCategory)
 	{
-		this.loadedCategory = aCategory;
 		this.toWorldLinkerate = {};
 		this.toWorldLinkerate.categories = [];
 		this.toWorldLinkerate.categoriesAltlangs = [];
@@ -119,9 +118,10 @@ ODP = {
 		if(this.toWorldLinkerate.readRemaining == this.toWorldLinkerate.readRead)
 		{
 			this.toWorldLinkerate.categories = this.toWorldLinkerate.categories.sort(this.sortLocale);
-
+			var counter = 0;
 			for(var id in this.toWorldLinkerate.categories)
 			{
+				counter++;
 				var alllinked = true;
 				for(var id2 in this.toWorldLinkerate.categories)
 				{
@@ -135,10 +135,10 @@ ODP = {
 					}
 				}
 				if(alllinked)
-					$('.content').append('<br><i><a href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
+					$('.content').append('<br>'+counter+' - <i><a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
 				else
-					$('.content').append('<br><a href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a>');
-				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
+					$('.content').append('<br>'+counter+' - <a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a>');
+				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show current '+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].length+'altlangs]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
 			}
 		}
 
