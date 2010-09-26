@@ -136,7 +136,7 @@ ODP = {
 				}
 				//display
 					//counter	& checkbox
-					$('.content').append('<br><input type="checkbox" class="checkbox" value="'+this.toWorldLinkerate.categories[id]+'/" checked="checked" /> '+counter+' - ');
+					$('.content').append('<br><input type="checkbox" class="checkbox" value="'+this.toWorldLinkerate.categories[id]+'" checked="checked" /> '+counter+' - ');
 				
 				if(alllinked)//if all linked italic
 					$('.content').append('<i><a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
@@ -158,6 +158,17 @@ ODP = {
 		
 		for(var id in categories)
 		{
+			$('.content').append(
+													 '<form action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
+													 '<input type="hidden" name="cat" value="'+encodeURIComponent(categories[id])+'" />'+
+													 '<input type="hidden" name="type" value="altlang" />'+
+													 '<input type="hidden" name="altlangs" value="'+encodeURIComponent(this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n"))+'" />'+
+													 '<input type="hidden" name="newaltlangs" value="'+encodeURIComponent((categories.join("\n")).replace(categories[id],'\n'))+'" />'+
+													 '<input type="hidden" name="submit" value="Update" />'+
+													 '</form>'
+													 
+													 
+													 )
 			console.log(categories[id]);
 		}
 	},
