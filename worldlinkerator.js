@@ -135,10 +135,8 @@ ODP = {
 					}
 				}
 				//display
-					//counter
-					$('.content').append('<br>'+counter+' - ');
-					//checkbox
-					$('.content').append('<input type="checkbox" value="'+this.toWorldLinkerate.categories[id]+'" checked="checked" />');
+					//counter	& checkbox
+					$('.content').append('<br><input type="checkbox" value="'+this.toWorldLinkerate.categories[id]+'/" checked="checked" /> '+counter+' - ');
 				
 				if(alllinked)//if all linked italic
 					$('.content').append('<i><a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
