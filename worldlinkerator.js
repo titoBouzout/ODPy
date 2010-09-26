@@ -136,7 +136,7 @@ ODP = {
 				}
 				//display
 					//counter	& checkbox
-					$('.content').append('<br><input type="checkbox" value="'+this.toWorldLinkerate.categories[id]+'/" checked="checked" /> '+counter+' - ');
+					$('.content').append('<br><input type="checkbox" class="checkbox" value="'+this.toWorldLinkerate.categories[id]+'/" checked="checked" /> '+counter+' - ');
 				
 				if(alllinked)//if all linked italic
 					$('.content').append('<i><a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
