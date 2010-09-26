@@ -114,6 +114,10 @@ ODP = {
 			this.toWorldLinkerate.categoriesAltlangs[aCategory] = aData.alternative;
 			this.toWorldLinkerate.categoriesAltlangs[aCategory] = this.toWorldLinkerate.categoriesAltlangs[aCategory].sort(this.sortLocale);
 		}
+		else
+		{
+			this.toWorldLinkerate.categoriesAltlangs[aCategory] = [];
+		}
 		
 		if(this.toWorldLinkerate.readRemaining == this.toWorldLinkerate.readRead)
 		{
