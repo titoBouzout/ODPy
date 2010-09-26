@@ -153,7 +153,9 @@ ODP = {
 	},
 	worldlinkerateSetCategories : function()
 	{
-		var categories = $('input:checked');
+		var categories = [];
+		$('input:checked').each(function(){ categories[categories] = this.value;})
+		
 		for(var id in categories)
 		{
 			console.log(categories[id].value);
