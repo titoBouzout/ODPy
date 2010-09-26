@@ -71,36 +71,69 @@ ODP = {
 	{
 		this.loadedCategory = aCategory;
 		this.toWorldLinkerate = {};
-		this.toWorldLinkerate.categories = {};
+		this.toWorldLinkerate.categories = [];
+		this.toWorldLinkerate.categoriesAltlangs = [];
 		this.toWorldLinkerate.read = {};
+		this.toWorldLinkerate.readRead = 0;
+		this.toWorldLinkerate.readRemaining = 0;
+		this.toWorldLinkerate.readRemaining++;
 		
 		this.statusSet('loading category  "'+categoryTitle(aCategory)+'"'+this.e);
 		this.setTitle(aCategory);
+		
 		parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
 	},
 	worldlinkerateGetCategories : function(aCategory, aData)
 	{
-		this.statusSet('parsing category "'+categoryTitle(aCategory)+'"');
+		this.statusSet('looking for altlangs on "'+categoryTitle(aCategory)+'"');
 		this.statusHide();
 		
-		//read all alternative languages for this category ( if were not read yet )
+		this.toWorldLinkerate.read[aCategory] = true;
+		this.toWorldLinkerate.readRead++;
+		this.toWorldLinkerate.categories[this.toWorldLinkerate.categories.length] = aCategory;
+		//read all alternative languages for this category ( if not yet )
 		if(aData.alternative.length > 0)
 		{
 			for(var id in aData.alternative)
 			{
-				$(aData.alternative[id]).find('a').each(function(){	
-																													var anAltlang = this.getAttribute('href');
-																													if(!ODPy.toWorldLinkerate.read[anAltlang])
-																													{
-																														ODPy.toWorldLinkerate.read[anAltlang] = true;
-																														ODPy.statusSet('saving altlang "'+categoryTitle(anAltlang)+'"');
-																														ODPy.statusHide();
-																														//parseCategory(categoryGetFromURL(aCategory), function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
-																													}
-																												 });
-				
+				aData.alternative[id] = decodeURIComponent(aData.alternative[id].split('"')[1].split("#")[1].replace(/^\/Top\//, '').replace(/\/$/, ''));
+
+				if(!this.toWorldLinkerate.read[aData.alternative[id]])
+				{
+					this.statusSet('loading category "'+categoryTitle(aData.alternative[id])+'"');
+					this.statusHide();
+					this.toWorldLinkerate.readRemaining++;
+					parseCategory(aData.alternative[id], function(aCategory, aData){ ODPy.worldlinkerateGetCategories(aCategory, aData);});
+				}
 			}
-		}	
+			this.toWorldLinkerate.categoriesAltlangs[aCategory] = aData.alternative;
+			this.toWorldLinkerate.categoriesAltlangs[aCategory] = this.toWorldLinkerate.categoriesAltlangs[aCategory].sort(this.sortLocale);
+		}
+		
+		if(this.toWorldLinkerate.readRemaining == this.toWorldLinkerate.readRead)
+		{
+			this.toWorldLinkerate.categories = this.toWorldLinkerate.categories.sort(this.sortLocale);
+
+			for(var id in this.toWorldLinkerate.categories)
+			{
+				var alllinked = true;
+				for(var id2 in this.toWorldLinkerate.categories)
+				{
+					if(
+						 this.toWorldLinkerate.categories[id2] != this.toWorldLinkerate.categories[id] 
+						 && !inArray(this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id2]], this.toWorldLinkerate.categories[id])
+					)
+					{
+						alllinked = false;
+						break;
+					}
+				}
+				if(alllinked)
+					$('.content').append('<br><i>'+this.toWorldLinkerate.categories[id] +'</i>');
+				else
+					$('.content').append('<br>'+this.toWorldLinkerate.categories[id] +'');
+			}
+		}
 
 		this.statusHide();
 	},
