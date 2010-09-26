@@ -134,11 +134,18 @@ ODP = {
 						break;
 					}
 				}
-				if(alllinked)
-					$('.content').append('<br>'+counter+' - <i><a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
+				//display
+					//counter
+					$('.content').append('<br>'+counter+' - ');
+					//checkbox
+					$('.content').append('<input type="checkbox" value="'+this.toWorldLinkerate.categories[id]+'" checked="checked" />');
+				
+				if(alllinked)//if all linked italic
+					$('.content').append('<i><a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a></i>');
 				else
-					$('.content').append('<br>'+counter+' - <a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a>');
-				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show current '+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].length+'altlangs]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
+					$('.content').append('<a target="_blank" href="'+categoryGetURLPrivate(this.toWorldLinkerate.categories[id])+'">'+this.toWorldLinkerate.categories[id] +'</a>');
+				//show linked altlangs
+				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show current '+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].length+' altlangs]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
 			}
 		}
 
