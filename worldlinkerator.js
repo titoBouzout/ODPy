@@ -166,11 +166,13 @@ ODP = {
 													 '<form action="http://editors.dmoz.org/editors/editcat/editrelation?cat='+encodeURIComponent(categories[id])+'&type=altlang" method="post" target="_blank">'+
 													 '<input type="hidden" name="cat" value="'+(categories[id])+'" />'+
 													 '<input type="hidden" name="type" value="altlang" />'+
-													 '<input type="hidden" name="altlangs" value="'+encodeURIComponent((this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n")))+'" />'+
-													 '<input type="hidden" name="newaltlangs" value="'+encodeURIComponent(((categories.join("\n")).replace(categories[id],'\n')))+'" />'+
+													 '<input type="hidden" name="altlangs" id="altlangs'+id+'" value="" />'+
+													 '<input type="hidden" name="newaltlangs" id="newaltlangs'+id+'" value="" />'+
 													 '<input type="submit" name="submit" value="Update" style="display:none;" />'+
 													 '</form>'
 													 );
+		  $('#altlangs'+id+'').val((this.toWorldLinkerate.categoriesAltlangs[categories[id]].join("\n")));
+		  $('#newaltlangs'+id+'').val(((categories.join("\n")).replace(categories[id],'\n')));
 		}
 		
 		//freaky jquery submit form...
