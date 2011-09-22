@@ -151,7 +151,7 @@ ODP = {
 			}
 			
 			//$('.content').append('<br><br><br><font color="red">* Important : uncheck only non-appropiated worldlinks. Keep checked appropiated or already linked altlangs.</font>');
-			$('.content').append('<br><br><br><input style="max-width:none;min-width:592px;" type="button" value="Worldlinkerate" onclick="this.hidden=true;ODPy.worldlinkerateSetCategories()" />')
+			$('.content').append('<br><br><br><input style="max-width:none;min-width:55px;" type="button" value="Worldlinkerate" onclick="this.hidden=true;ODPy.worldlinkerateSetCategories()" />')
 		}
 
 	},
