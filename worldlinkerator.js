@@ -150,8 +150,8 @@ ODP = {
 				$('.content').append(' - <a href="javascript://" onclick="flipElement(this.nextSibling, this)">[show current '+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].length+' altlangs]</a><div style="display:none;margin-left:20px;">'+this.toWorldLinkerate.categoriesAltlangs[this.toWorldLinkerate.categories[id]].join("<br>\n")+'</div>')
 			}
 			
-			$('.content').append('<br><br><br><font color="red">* Important : uncheck only non-appropiated worldlinks. Keep checked appropiated or already linked altlangs.</font>');
-			$('.content').append('<br><br><br><input style="max-width:none;min-width:592px;" type="button" value="Worldlinkerate ( Build reciprocal links.. between selected categories only [excluding unselected] )" onclick="this.hidden=true;ODPy.worldlinkerateSetCategories()" />')
+			//$('.content').append('<br><br><br><font color="red">* Important : uncheck only non-appropiated worldlinks. Keep checked appropiated or already linked altlangs.</font>');
+			$('.content').append('<br><br><br><input style="max-width:none;min-width:592px;" type="button" value="Worldlinkerate" onclick="this.hidden=true;ODPy.worldlinkerateSetCategories()" />')
 		}
 
 	},
